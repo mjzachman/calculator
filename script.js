@@ -1,20 +1,20 @@
-const add = function(num1, num2 ) {
+function add(num1, num2) {
     return num1 + num2;
 };
 
-const subtract = function(num1, num2) {
+function subtract(num1, num2) {
     return num1 - num2;
 };
 
-const multiply = function(num1, num2) {
+function multiply(num1, num2) {
     return num1 * num2;
 };
 
-const divide = function(num1, num2){
+function divide(num1, num2){
     return num1 / num2;
 }
 
-const power = function(num1, num2) {
+function power(num1, num2) {
 	let pow = 1;
   for (let i = 0; i < num2; i++){
     pow *= num1;
@@ -22,7 +22,7 @@ const power = function(num1, num2) {
   return pow;
 };
 
-const factorial = function(num) {
+function factorial(num) {
 	let fact = 1;
   if(num === 0){return fact};
 
@@ -31,3 +31,49 @@ const factorial = function(num) {
   }
   return fact
 };
+
+function addButtonEvents(){
+  const numButtons = document.querySelectorAll('.number');
+  numButtons.forEach((button) => {
+    button.addEventListener('click', () => {
+      numInput(button.id);
+    });
+  });
+
+  const opButtons = document.querySelectorAll('.operator');
+  opButtons.forEach((button) => {
+    button.addEventListener('click', () => {
+      opInput(button.id);
+    });
+  });
+
+  const equals = document.querySelector('#equals');
+  equals.addEventListener('click', () => {
+    calculate(inputs);
+  })
+  return;
+}
+
+let inputs = ["", "", ""];
+
+function numInput(numIncoming){
+  console.log(numIncoming);
+}
+
+function opInput(opIncoming){
+  console.log(opIncoming)
+}
+
+function calculate(currentInputs){
+  console.log(currentInputs);
+}
+
+
+
+function main(){
+  
+  addButtonEvents();
+  return;
+}
+
+main();
